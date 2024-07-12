@@ -1,0 +1,29 @@
+.primer-section{
+    background-color:#0872b4 ;
+   height: 40vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   min-height: 300px;  
+   }
+   
+   h1{
+       font-size: 34px;
+       font-weight: 200;
+       margin-bottom: 25px;
+       color: white;
+   }
+   
+
+   .btn-primer{
+       background-color: #fff;
+       border-color: #0872b4;
+       color: #0872b4;
+       font-size: 22px;
+       padding: 0 5px;
+       line-height: 56px;
+       border-radius: 7px;
+       cursor: pointer;
+   }
+   

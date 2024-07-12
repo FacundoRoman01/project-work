@@ -1,0 +1,65 @@
+.segund-section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+    
+}
+
+.descrption{
+    font-size: 30px;
+    font-weight: 600;
+    padding: 30px;
+    text-align: center;
+}
+
+
+
+.img-about-primer{
+    height: 526px;
+    width: 786px;
+}
+
+
+/*segundo foto section*/
+
+
+
+.img-about-primer {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.tercer-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding: 30px;
+    position: relative; 
+}
+
+
+.description-imgProfesional {
+    position: absolute; 
+    bottom: 100px;
+    left: 570px;
+    background: rgba(255, 255, 255, 0.8); 
+    padding: 10px;
+    border-radius: 5px; 
+}
+
+.description-imgProfesional h2 {
+    margin: 0; 
+    font-size: 28px;
+}
+
+.description-imgProfesional p {
+    margin: 5px 0 0; 
+    font-size: 26px;
+    color: #666;
+}
+
