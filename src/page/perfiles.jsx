@@ -4,6 +4,7 @@ const perfiles = () => {
   return (
     <div>
       <Card ></Card>
+      
     </div>
   )
 }

@@ -1,0 +1,114 @@
+.custom-login-page {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    height: 100vh;
+    background-color: #fff;
+  }
+  
+  .custom-login-form-container {
+    display: flex;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .custom-form-content {
+    padding: 100px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+  }
+  
+  .custom-logo {
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #0872b4;
+  }
+  
+  .custom-group-form {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .custom-form-group {
+    
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .custom-form-group label {
+    margin-bottom: 5px;
+  }
+  
+  .custom-form-group input {
+    width: 350px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+
+  .custom-form-group-second label{
+    margin-bottom: 5px;
+  }
+
+  .custom-form-group-second input{
+    width: 720px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .custom-form-group-second label{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+
+  
+  .custom-links {
+    margin-bottom: 20px;
+    
+  }
+  
+  .custom-links p {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  
+  .custom-btn-submit {
+    padding: 10px;
+    background-color: #0872b4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  /* .custom-btn-submit:hover {
+    background-color: #333;
+  } */
+  
+  .custom-image-content {
+    display: none; /* Para ocultar la imagen en pantallas pequeñas */
+  }
+  
+  .custom-side-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+  }
+  
+  @media (min-width: 768px) {
+    .custom-image-content {
+      display: block; /* Mostrar la imagen en pantallas grandes */
+    }
+  }
+  
