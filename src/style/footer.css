@@ -1,0 +1,56 @@
+.footer{
+    background-color: azure;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    color: #333;
+    
+}
+
+
+.product-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    
+}
+
+.product-footer a{
+    margin: 5px;
+    color:  #0872b4;;
+    
+}
+
+.titulo-footer{
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
+.company-footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin-bottom: 28px;
+    margin-left: 80px;
+}
+
+
+.company-footer a{
+    margin: 5px;
+    color:  #0872b4;;
+}
+
+.copy-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5px;
+    color: #999999;
+    margin-bottom: 18px;
+}

@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+ 
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.filters select, .filters input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  margin: 5px;
+  flex: 1 1 200px;
+}
+
+.filters .autocomplete {
+  flex: 1 1 200px;
+}
+
+.filters .search-skills .autocomplete-input {
+  padding: 8px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 22%;
+  box-sizing: border-box;
+}
+
+.filters .search-skills .autocomplete-result-list {
+  font-size: 12px;
+  width: 22%;
+}
+
+.filters .filter-button {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
+  margin: 5px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  width: calc(25% - 20px);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.card img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.card h2 {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.card .skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card .skills span {
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 12px;
+  color: #333;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: calc(33.333% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filters select, .filters button, .filters input {
+    flex: 1 1 auto;
+    margin: 5px 0;
+  }
+
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px);
+  }
+
+  .filters select, .filters button, .filters input {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .filters button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+/* Modal Styles */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #555;
+  margin: 10px 0;
+}
+
+.modal-content .buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.modal-content .buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.modal-content .buttons .contact {
+  background-color: #000;
+  color: #fff;
+}
+
+.modal-content .buttons .profile {
+  background-color: #f1f1f1;
+  color: #333;
+}
+
+.modal-content .details {
+  text-align: left;
+  margin-top: 20px;
+}
+
+.modal-content .details .detail {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.modal-content .details .detail img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.modal-content .details .skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: 10px 0;
+}
+
+.modal-content .details .skills span {
+  background-color: #eee;
+  border-radius: 5px;
+  padding: 5px 10px;
+  margin: 5px;
+  font-size: 12px;
+  color: #333;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.pagination button {
+  padding: 10px;
+  margin: 0 5px;
+  border: none;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.pagination button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  margin: 0 10px;
+  font-size: 16px;
+}

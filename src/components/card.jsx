@@ -1,15 +1,17 @@
 import "../style/card.css"
 
-const card = () => {
+const card = ({ card, openModal }) => {
   return (
-    <div className="card">
-          {/* <img src={imagen} alt=""  className="card-imagen"/>
-          <div className="descrption-card">
-            <h2>{nombre}</h2>
-            <p> {ocupacion} </p>
-            <button> Consultar </button>
-          </div> */}
-        <h1 className="titulo-card">Tarjetas profesionales</h1>
+    <div className="card" onClick={() => openModal(card)}>
+      <img src={card.imgSrc} alt="Profile Picture" />
+      <h2>{card.title}</h2>
+      <p>{card.name}</p> {/* Añadido para mostrar el nombre */}
+      <p>{card.description}</p>
+      <div className="skills">
+        {card.skills.map(skill => (
+          <span key={skill}>{skill}</span>
+        ))}
+      </div>
     </div>
   )
 }
