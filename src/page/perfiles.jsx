@@ -3,9 +3,12 @@ import Filters from '../components/filters.jsx';
 import Card from '../components/card.jsx';
 import Pagination from '../components/Pagination.jsx';
 import Modal from '../components/Modal.jsx';
+import fotoPrueba from '../img/fotos.jpg';
+
 import '../style/App.css';
 
 const Perfiles = () => {
+
   const [selectedProfession, setSelectedProfession] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
   const [selectedProvince, setSelectedProvince] = useState('');
@@ -28,8 +31,8 @@ const Perfiles = () => {
   const cards = [
     {
       id: 1,
-      name: 'Juan Perez',
-      imgSrc: 'https://via.placeholder.com/100',
+      name: 'Facundo Roman',
+      imgSrc: fotoPrueba,
       title: 'Desarrollador Full Stack Jr',
       description: 'Disponible para trabajar',
       availability: '6 meses a 1 año',
@@ -407,7 +410,7 @@ const Perfiles = () => {
 
   return (
     <div className="container">
-      <Filters
+      <Filters className="filters"
         selectedProfession={selectedProfession}
         setSelectedProfession={setSelectedProfession}
         selectedSpecialty={selectedSpecialty}
@@ -431,7 +434,7 @@ const Perfiles = () => {
         ))}
       </div>
 
-      <Pagination
+      <Pagination className="pagination"
         currentPage={currentPage}
         totalPages={totalPages}
         prevPage={prevPage}

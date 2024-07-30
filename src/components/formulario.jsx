@@ -12,13 +12,13 @@ const formulario = () => {
           <form>
             <div className="form-group">
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" required />
+              <input type="email" id="email" name="email"  />
             </div>
             <div className="form-group">
               <label htmlFor="password">Contraseña</label>
-              <input type="password" id="password" name="password" required />
+              <input type="password" id="password" name="password"  />
             </div>
-            <button type="submit" className="btn-submit">Iniciar sesión</button>
+            <button className="btn-submit"><Link to="/login">Iniciar sesión</Link></button> 
           </form>
           <div className="links">
 

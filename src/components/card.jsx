@@ -3,7 +3,7 @@ import "../style/card.css"
 const card = ({ card, openModal }) => {
   return (
     <div className="card" onClick={() => openModal(card)}>
-      <img src={card.imgSrc} alt="Profile Picture" />
+      <img src={card.imgSrc} alt="Profile Picture" title="hola"/>
       <h2>{card.title}</h2>
       <p>{card.name}</p> {/* Añadido para mostrar el nombre */}
       <p>{card.description}</p>

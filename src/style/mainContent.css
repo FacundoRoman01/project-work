@@ -1,0 +1,20 @@
+.main-content {
+    width: calc(100% - 240px);
+    margin-left: 240px;
+    padding: 10px;
+    transition: margin-left 0.3s ease;
+   
+}
+
+.main-content h1{
+    color: #000;
+    font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        width: 100%;
+        margin-left: 0;
+        padding: 20px;
+    }
+}
