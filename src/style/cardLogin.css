@@ -1,4 +1,5 @@
-.card-login{
+/* Estilos generales para las tarjetas de inicio de sesión */
+.card-login {
     flex: 1 1 calc(33.333% - 20px);
     padding: 30px;
     background-color: #f6f6f6;
@@ -7,14 +8,11 @@
     text-align: center;
     margin: 10px;
     box-sizing: border-box;
-   
 }
-
 
 .card-login h2 {
     font-size: 20px;
     margin-bottom: 10px;
-    
 }
 
 .card-login p {
@@ -47,4 +45,33 @@
     justify-content: center;
     border-radius: 50%;
     margin: 0 auto 10px;
+}
+
+/* Estilos para pantallas móviles */
+@media (max-width: 768px) {
+    .card-login {
+        flex: 1 1 100%;
+        padding: 20px;
+        margin: 10px 0; /* Ajusta el margen para pantallas pequeñas */
+        box-sizing: border-box;
+    }
+
+    .card-login h2 {
+        font-size: 18px; /* Ajusta el tamaño de la fuente del encabezado */
+    }
+
+    .card-login p {
+        font-size: 12px; /* Ajusta el tamaño de la fuente del párrafo */
+    }
+
+    .card-login button {
+        padding: 12px 15px; /* Ajusta el padding del botón */
+        font-size: 12px; /* Ajusta el tamaño de la fuente del botón */
+    }
+
+    .logo-login {
+        font-size: 30px; /* Ajusta el tamaño de la fuente del logo */
+        width: 50px;
+        height: 50px;
+    }
 }

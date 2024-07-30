@@ -8,38 +8,93 @@
   text-align: center;
   box-sizing: border-box;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .card img {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .card h2 {
-  font-size: 16px;
+  font-size: 1.2em;
   margin: 10px 0;
+  font-weight: bold;
+  color: #333;
 }
 
 .card p {
-  font-size: 14px;
+  font-size: 0.9em;
   color: #555;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 
 .card .skills {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 15px;
+  
 }
 
 .card .skills span {
-  background-color: #eee;
-  border-radius: 5px;
-  padding: 5px 10px;
-  margin: 5px;
-  font-size: 12px;
-  color: #333;
+  border: 1px solid #ddd;
+  padding: 8px 10px;
+  color: #888;
+  margin: 0 5px 5px 0;
+  border-radius: 180px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* Two cards per row */
+    margin: 10px;
+  }
+
+  .card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .card h2 {
+    font-size: 1em;
+  }
+
+  .card p {
+    font-size: 0.8em;
+  }
+
+  .card .skills span {
+    font-size: 0.7em;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    width: calc(100% - 20px); /* One card per row */
+    /* margin: 10px 0; */
+  }
+
+  .card img {
+    width: 50%;
+    height: 43%;
+  }
+
+  .card h2 {
+    font-size: 15px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+
+  .card .skills span {
+    font-size: 0.8em;
+  }
 }

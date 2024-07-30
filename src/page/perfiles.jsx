@@ -4,10 +4,14 @@ import Card from '../components/card.jsx';
 import Pagination from '../components/Pagination.jsx';
 import Modal from '../components/Modal.jsx';
 import fotoPrueba from '../img/fotos.jpg';
+import Header from "../components/header.jsx"
+import Footer from "../components/footer.jsx";
+
 
 import '../style/App.css';
 
 const Perfiles = () => {
+  
 
   const [selectedProfession, setSelectedProfession] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
@@ -347,6 +351,7 @@ const Perfiles = () => {
   const updateFilteredCards = () => {
     setFilteredCards(cards.filter(card => {
       return (
+        
         (selectedProfession ? card.profession === selectedProfession : true) &&
         (selectedSpecialty ? card.specialty === selectedSpecialty : true) &&
         (selectedProvince ? card.province === selectedProvince : true) &&
@@ -409,7 +414,12 @@ const Perfiles = () => {
   };
 
   return (
+    <>
+    
+    <Header />
+
     <div className="container">
+      
       <Filters className="filters"
         selectedProfession={selectedProfession}
         setSelectedProfession={setSelectedProfession}
@@ -447,8 +457,11 @@ const Perfiles = () => {
         modalData={modalData}
       />
 
-
+     
     </div>
+    <Footer />
+    </>
+    
   );
 };
 

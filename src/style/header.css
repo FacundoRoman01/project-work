@@ -1,85 +1,119 @@
-nav,
-.nav-links {
-  display: flex;
+/* Estilos para el contenedor del encabezado */
+header {
+  width: 100%;
 }
 
 nav {
+  display: flex;
   justify-content: space-between;
   align-items: center;
-  /* height: 17vh; */
-  /* height: 80px; */   /*TaMBIEN SE CAMBIA EN EL LOGIN ------------- NAVBAR*/
   background-color: #fff;
   color: #333333;
-  padding-inline-start: 10px;
-  padding-inline-end: 10px;
+  padding: 10px;
 }
 
-
-.nav-links {
-  gap: 2rem;
-  list-style: none;
-  /* font-size: 1.5rem; */
-  font-size: 20px;
+/* Estilos para el logotipo */
+.logo {
+  font-size: 30px;
 }
 
-a {
-    color: #333333;
+.logo a {
+  color: #333333;
   text-decoration: none;
-  text-decoration-color: white;
 }
 
-a:hover {
+.logo a:hover {
   color: grey;
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: rgb(181, 181, 181);
 }
 
-.logo {
-  font-size: 30px;
-  margin-top: 16px;
+/* Estilos para el contenedor de navegación y menú hamburguesa */
+.nav-container {
+  display: flex;
+  align-items: center;
 }
 
-.logo:hover {
-  cursor: default;
+/* Estilos para los enlaces de navegación en escritorio */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  font-size: 20px;
 }
 
-/* HAMBURGER MENU */
+.nav-links li {
+  list-style: none;
+  
+}
 
+.nav-links a {
+  color: #333333;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: grey;
+  text-decoration: underline;
+  text-underline-offset: 1rem;
+  text-decoration-color: rgb(181, 181, 181);
+}
+
+/* Estilos para el menú hamburguesa */
 #hamburger-nav {
   display: none;
 }
 
+/* Estilos para el icono del menú hamburguesa */
 .hamburger-menu {
+  display: none;
+  cursor: pointer;
   position: relative;
-  display: inline-block;
+  width: 30px;
+  height: 24px;
 }
 
 .hamburger-icon {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 24px;
-  width: 30px;
-  cursor: pointer;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .hamburger-icon span {
+  display: block;
   width: 100%;
   height: 2px;
   background-color: black;
-  transition: all 0.3 ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
+/* Animaciones para la X del menú hamburguesa */
+/* .hamburger-icon.open span:first-child {
+  transform: rotate(45deg) translateY(6px);
+}
+
+.hamburger-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-icon.open span:last-child {
+  transform: rotate(-45deg) translateY(-6px);
+} */
+
+/* Estilos para el menú desplegable */
 .menu-links {
   position: absolute;
-  top: 100%;
+  top: 100%; /* Ajustar según sea necesario */
   right: 0;
   background-color: white;
-  width: fit-content;
+  width: 100%;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.3 ease-in-out;
+  transition: max-height 0.3s ease-in-out;
 }
 
 .menu-links a {
@@ -89,7 +123,6 @@ a:hover {
   font-size: 1.5rem;
   color: black;
   text-decoration: none;
-  transition: all 0.3 ease-in-out;
 }
 
 .menu-links li {
@@ -97,29 +130,35 @@ a:hover {
 }
 
 .menu-links.open {
-  max-height: 300px;
+  max-height: 300px; /* Ajustar según sea necesario */
 }
 
-/* .hamburger-icon.open span:first-child {
-  transform: rotate(45deg) translate(10px, 5px);
-}
+/* Media Queries para pantallas móviles */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Ocultar los enlaces en pantallas pequeñas por defecto */
+  }
+  .nav-links li {
+   margin: 10px;
+  
+  }
 
-.hamburger-icon.open span:nth-child(2) {
-  opacity: 0;
-}
+  #hamburger-nav {
+    display: block;
+  }
 
-.hamburger-icon.open span:last-child {
-  transform: rotate(-45deg) translate(10px, -5px);
-}
+  .hamburger-menu {
+    display: block;
+  }
 
-.hamburger-icon span:first-child {
-  transform: none;
+  .nav-links.open {
+    display: block;
+    position: absolute;
+    top: 54px; /* Ajustar según sea necesario */
+    right: 0;
+    background-color: white;
+    width: 100%;
+    max-height: 300px; /* Ajustar según sea necesario */
+    overflow: auto;
+  }
 }
-
-.hamburger-icon span:first-child {
-  opacity: 1;
-}
-
-.hamburger-icon span:first-child {
-  transform: none;
-} */

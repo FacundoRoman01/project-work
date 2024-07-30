@@ -20,7 +20,7 @@ const Sidebar = ( onNavigate) => {
 
     return (
         <div className="sidebar-login">
-            <div className="logo-sidebar">GuiaPin</div>
+            <div className="logo-sidebar"> <Link to="/">GuiaPin</Link>   </div>
             <nav className='nav-login'>
                 <ul>
                     {/* <Link to="/inicioLogin"> 🏠  Inicio </Link> */}
