@@ -38,7 +38,7 @@
   transform: translateY(-10px);
 }
 
-.profile-card img {
+.profile-photo {
   border-radius: 50%;
   width: 100px;
   height: 100px;
@@ -72,14 +72,6 @@
   margin: 5px;
   font-size: 0.8em;
   color: #333;
-}
-
-.pagination {
-  margin: 20px;
-}
-
-.filters {
-  margin: 20px;
 }
 
 .profile-card button {
@@ -121,9 +113,9 @@
       margin: 10px 0;
   }
 
-  .profile-card img {
-      width: 80px;
-      height: 80px;
+  .profile-photo {
+      width: 30%;
+      height: 40%;
   }
 
   .profile-card h3 {
@@ -160,9 +152,9 @@
       padding: 15px;
   }
 
-  .profile-card img {
-      width: 60%;
-      height: 43%;
+  .profile-photo {
+    width: 40%;
+    height: 40%;
   }
 
   .profile-card h3 {
@@ -170,19 +162,30 @@
   }
 
   .profile-card p {
-      font-size: 0.9em;
+      font-size: 0.8em;
   }
 
   .profile-card .skills span {
-      font-size: 0.em;
+      font-size: 0.7em;
   }
 
   .profile-card button {
       padding: 6px 10px;
-      font-size: 18px;
+      font-size: 0.8em;
   }
 
   .btn-primary {
-      font-size: 18px;
+      font-size: 0.8em;
   }
 }
+
+/*  card
+position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: initial;
+    border: 1px solid rgba(0, 0, 0, .125);
+ */

@@ -19,7 +19,9 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
-}
+    text-align: center;
+    margin: 28px
+  }
 
 .profile-photo img {
     width: 100px;
@@ -58,3 +60,14 @@
 .profile-actions .btn:hover {
     opacity: 0.8;
 }
+
+
+@media (max-width: 476px) {
+    .profile-header{
+        margin-bottom: 20px;
+        text-align: center;
+        margin: 28px;
+    }
+   
+  
+  }

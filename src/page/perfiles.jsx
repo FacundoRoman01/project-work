@@ -4,6 +4,10 @@ import Card from '../components/card.jsx';
 import Pagination from '../components/Pagination.jsx';
 import Modal from '../components/Modal.jsx';
 import fotoPrueba from '../img/fotos.jpg';
+import fotoPrueba2 from '../img/foto-prueba2.jpg';
+import fotoprueba3 from "../img/fotopruebaTres.jpg";
+import fotoprueba4 from "../img/fotoprueba4.jpg";
+import fotoprueba5 from "../img/fotoprueba5.jpg";
 import Header from "../components/header.jsx"
 import Footer from "../components/footer.jsx";
 
@@ -60,7 +64,7 @@ const Perfiles = () => {
     {
       id: 2,
       name: 'Maria Rodriguez',
-      imgSrc: 'https://via.placeholder.com/100',
+      imgSrc: fotoPrueba2,
       title: 'Frontend Developer',
       description: 'Disponible para proyectos',
       availability: '1 a 2 años',
@@ -84,7 +88,7 @@ const Perfiles = () => {
     {
       id: 3,
       name: 'Carlos Lopez',
-      imgSrc: 'https://via.placeholder.com/100',
+      imgSrc: fotoprueba3,
       title: 'Backend Developer',
       description: 'Freelancer',
       availability: '3 a 4 años',
@@ -108,7 +112,7 @@ const Perfiles = () => {
     {
       id: 4,
       name: 'Ana Gomez',
-      imgSrc: 'https://via.placeholder.com/100',
+      imgSrc: fotoprueba4,
       title: 'Desarrollador Mobile',
       description: 'Disponible para trabajar',
       availability: '2 a 3 años',
@@ -132,7 +136,7 @@ const Perfiles = () => {
     {
       id: 5,
       name: 'Luis Martinez',
-      imgSrc: 'https://via.placeholder.com/100',
+      imgSrc: fotoprueba5,
       title: 'Data Scientist',
       description: 'Científico de datos',
       availability: '4 a 5 años',

@@ -1,6 +1,11 @@
 import "../style/profiles.css"
 import { Link } from "react-router-dom"
 import fotoPrueba from "../img/fotos.jpg"
+// import fotoPrueba2 from "../img/foto-prueba2.jpg"
+import fotoprueba3 from "../img/fotopruebaTres.jpg";
+import fotoprueba4 from "../img/fotoprueba4.jpg";
+import fotoprueba5 from "../img/fotoprueba5.jpg";
+// import fotoPrueba3 from "../img/fotoPrueba3.jpg"
 // import Modal from '../components/Modal.jsx';
 // import Card from "./card.jsx";
 // import Pagination from "./Pagination.jsx";
@@ -48,58 +53,62 @@ function Profiles() {
 
     return (
       <section className="profiles">
-        <h2>Perfiles destacados</h2>
-        <div className="profile-cards">
-          <div className="profile-card">
-            <img src={fotoPrueba} alt="Perfil 1" />
-            <h3>FULL STACK DEVELOPER - REACT</h3>
-            <p>Empleo remoto<br />Exp. Más de 1 año</p>
-            <button>Ver perfil</button>
+      <h2>Perfiles destacados</h2>
+      <div className="profile-cards">
+        <div className="profile-card">
+          <img src={fotoPrueba} alt="Perfil 1" className="profile-photo"/>
+          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
+          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
+          <div className="skills">
+            <span>Programming</span>
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
           </div>
-          <div className="profile-card">
-            <img src="https://via.placeholder.com/80" alt="Perfil 2" />
-            <h3>REACT, REDUX, NODE.JS EXPERTO</h3>
-            <p>Empleo remoto<br />Exp. Menos de 6 meses</p>
-            <button>Ver perfil</button>
-          </div>
-          <div className="profile-card">
-            <img src="https://via.placeholder.com/80" alt="Perfil 3" />
-            <h3>DESARROLLADOR FULLSTACK</h3>
-            <p>Empleo remoto<br />Exp. Más de 1 año</p>
-            <button>Ver perfil</button>
-          </div>
-          <div className="profile-card">
-            <img src="https://via.placeholder.com/80" alt="Perfil 4" />
-            <h3>DESARROLLADOR WEB FRONTE</h3>
-            <p>Todas las modalidades<br />Exp. Sin experiencia</p>
-            <button>Ver perfil</button>
-          </div>
+          <button>Ver perfil</button>
         </div>
- 
-        {/* <div className="cards">
-        {paginatedCards.map(card => (
-          <Card key={card.id} card={card} openModal={openModal} />
-        ))}
-      </div> */}
-{/*
-      
-      <Pagination
-        currentPage={currentPage}
-        totalPages={totalPages}
-        prevPage={prevPage}
-        nextPage={nextPage}
-      />
- */}
-
- 
-        {/* <Modal
-        showModal={showModal}
-        closeModal={closeModal}
-        modalData={modalData}
-      />  */}
-
-        <button className="btn-primary"><Link to="/perfiles">Ver todos</Link></button>
-      </section>
+        <div className="profile-card">
+          <img src={fotoprueba5} alt="Perfil 1" className="profile-photo"/>
+          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
+          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
+          <div className="skills">
+            <span>Programming</span>
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+          <button>Ver perfil</button>
+        </div>
+        <div className="profile-card">
+          <img src={fotoprueba3} alt="Perfil 1" className="profile-photo"/>
+          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
+          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
+          <div className="skills">
+            <span>Programming</span>
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+          <button>Ver perfil</button>
+        </div>
+        <div className="profile-card">
+          <img src={fotoprueba4} alt="Perfil 1" className="profile-photo"/>
+          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
+          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
+          <div className="skills">
+            <span>Programming</span>
+            <span>JavaScript</span>
+            <span>HTML</span>
+            <span>CSS</span>
+          </div>
+          <button>Ver perfil</button>
+        </div>
+        {/* Repite esta estructura para las otras cards */}
+      </div>
+      <button className="btn-primary">
+        <Link to="/perfiles">Ver todos</Link>
+      </button>
+    </section>
     );
   }
   

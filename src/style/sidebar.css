@@ -68,6 +68,21 @@
         left: 0;
         transform: translateX(-100%);
     }
+    .sidebar-login {
+        width: 240px;
+        background-color: #f4f4f4;
+        padding: 20px;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        display: contents;
+        align-items: center;
+        justify-content: center;
+    }
 
     .sidebar.hidden {
         transform: translateX(0);
@@ -75,5 +90,13 @@
 
     .hamburger {
         display: block;
+    }
+
+    .logo-sidebar {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-align: center;
+        margin-top: 20px;
     }
 }
