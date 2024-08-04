@@ -1,7 +1,7 @@
-
+import { Link } from 'react-router-dom';
 import '../style/modal.css';
 
-const Modal = ({ showModal, closeModal, modalData }) => {
+const Modal = ({ showModal, closeModal, modalData}) => {
   if (!showModal) return null;
 
   const socialLinks = [
@@ -19,9 +19,9 @@ const Modal = ({ showModal, closeModal, modalData }) => {
     <div className="modal-overlay" onClick={closeModal}>
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <img src={modalData.imgSrc} alt="Profile Picture" />
-        <h2>{modalData.name}</h2> {/* Nombre del usuario */}
-        <h3>{modalData.title}</h3> {/* Título del perfil */}
-        <p>{modalData.description}</p> {/* Descripción del perfil */}
+        <h2>{modalData.name}</h2>
+        <h3>{modalData.title}</h3>
+        <p>{modalData.description}</p>
         <p>{modalData.availability}</p>
         <div className="details">
           <div className="detail">
@@ -56,7 +56,9 @@ const Modal = ({ showModal, closeModal, modalData }) => {
           </div>
         </div>
         <div className="buttons">
-          <button className="contact">Contactar</button>
+        <button className="contact">
+          <Link to={`/profesional/${modalData.id}`}>Contactar</Link>
+        </button>
           <button className="profile" onClick={closeModal}>Cerrar</button>
         </div>
       </div>

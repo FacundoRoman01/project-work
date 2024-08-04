@@ -7,8 +7,10 @@ import Contacto from './page/contacto.jsx';
 import RegistroForm from "./page/resgistroForm.jsx"
 import Login from "./page/login.jsx";
 import CuentaLogin from './page/cunetaLogin.jsx';
-function App() {
+import DetallesProfesionales from "./components/detallesProfesional.jsx"
 
+
+function App() {
 
 
   return (
@@ -20,6 +22,8 @@ function App() {
             <Route path='/registro' element={<RegistroForm />} />
             <Route path='/login' element={<Login />} />
             <Route path='/cuenta' element={<CuentaLogin />} />
+            <Route path="/profesional/:id" element={<DetallesProfesionales />} />
+
         </Routes>
      </Router>
      
