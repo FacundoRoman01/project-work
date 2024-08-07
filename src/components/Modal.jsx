@@ -1,19 +1,23 @@
 import { Link } from 'react-router-dom';
 import '../style/modal.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
 
-const Modal = ({ showModal, closeModal, modalData}) => {
+const Modal = ({ showModal, closeModal, modalData }) => {
   if (!showModal) return null;
 
   const socialLinks = [
-    { name: 'GitHub', link: modalData.link, color: '#333' },
     { name: 'LinkedIn', link: modalData.linkedin, color: '#0077b5' },
-    { name: 'Twitter', link: modalData.twitter, color: '#1DA1F2' },
     { name: 'Facebook', link: modalData.facebook, color: '#4267B2' },
     { name: 'Instagram', link: modalData.instagram, color: '#C13584' },
     { name: 'WhatsApp', link: modalData.whatsapp, color: '#25D366' },
     { name: 'GoogleMaps', link: modalData.googlemaps, color: '#DB4437' },
-    { name: 'WebPage', link: modalData.webpage, color: '#0e76a8' },
   ];
+
+  const handleSaveContact = () => {
+    // Lógica futura para guardar el contacto
+    console.log(`Guardar contacto de ${modalData.name}`);
+  };
 
   return (
     <div className="modal-overlay" onClick={closeModal}>
@@ -56,9 +60,12 @@ const Modal = ({ showModal, closeModal, modalData}) => {
           </div>
         </div>
         <div className="buttons">
-        <button className="contact">
-          <Link to={`/profesional/${modalData.id}`}>Contactar</Link>
-        </button>
+          <button className="contact">
+            <Link to={`/profesional/${modalData.id}`}>Contactar</Link>
+          </button>
+          <button className="save-contact" onClick={handleSaveContact}>
+            <FontAwesomeIcon icon={faSave} /> Guardar contacto
+          </button>
           <button className="profile" onClick={closeModal}>Cerrar</button>
         </div>
       </div>

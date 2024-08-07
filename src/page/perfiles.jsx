@@ -1,16 +1,16 @@
 import { useState, useMemo, useEffect } from 'react';
 import Filters from '../components/filters.jsx';
-import Card from '../components/card.jsx';
+import Card from '../components/Card.jsx';
 import Pagination from '../components/Pagination.jsx';
 import Modal from '../components/Modal.jsx';
 import Header from "../components/header.jsx";
 import Footer from "../components/footer.jsx";
-import data from '../../data/cards.json';  // Importar el archivo JSON
+import data from '../../data/cards.json'; 
 
 import '../style/App.css';
 
 const Perfiles = () => {
-  const [cards, setCards] = useState(data.cards);
+  const [cards] = useState(data.cards);
   const skillsList = data.skillsList;
   const [selectedProfession, setSelectedProfession] = useState('');
   const [selectedSpecialty, setSelectedSpecialty] = useState('');
@@ -21,27 +21,28 @@ const Perfiles = () => {
   const [showModal, setShowModal] = useState(false);
   const [modalData, setModalData] = useState({});
   const [currentPage, setCurrentPage] = useState(1);
-  const [filteredCards, setFilteredCards] = useState([]);
+  const [filteredCards, setFilteredCards] = useState(cards);
   const cardsPerPage = 8;
 
-
-  const updateFilteredCards = () => {
-    setFilteredCards(cards.filter(card => {
-      return (
-        (selectedProfession ? card.profession === selectedProfession : true) &&
-        (selectedSpecialty ? card.specialty === selectedSpecialty : true) &&
-        (selectedProvince ? card.province === selectedProvince : true) &&
-        (selectedCity ? card.city === selectedCity : true) &&
-        (selectedZone ? card.zone === selectedZone : true) &&
-        (selectedSkill ? card.skills.some(skill => skill.toLowerCase().includes(selectedSkill.toLowerCase())) : true)
-      );
-    }));
-  };
-
   useEffect(() => {
+    const updateFilteredCards = () => {
+      const filtered = cards.filter(card => {
+        return (
+          (selectedProfession ? card.profession === selectedProfession : true) &&
+          (selectedSpecialty ? card.specialty === selectedSpecialty : true) &&
+          (selectedProvince ? card.province === selectedProvince : true) &&
+          (selectedCity ? card.city === selectedCity : true) &&
+          (selectedZone ? card.zone === selectedZone : true) &&
+          (selectedSkill ? card.skills.some(skill => skill.toLowerCase().includes(selectedSkill.toLowerCase())) : true)
+        );
+      });
+      setFilteredCards(filtered);
+    };
+  
     updateFilteredCards();
-  }, [selectedProfession, selectedSpecialty, selectedProvince, selectedCity, selectedZone, selectedSkill, cards]);
-
+    setCurrentPage(1); // Reset pagination when filters change
+  }, [selectedProfession, selectedSpecialty, selectedProvince, selectedCity, selectedZone, selectedSkill]);
+  
   const totalPages = useMemo(() => {
     return Math.ceil(filteredCards.length / cardsPerPage);
   }, [filteredCards.length]);
@@ -80,8 +81,6 @@ const Perfiles = () => {
     setSelectedCity('');
     setSelectedZone('');
     setSelectedSkill('');
-    setCurrentPage(1);
-    updateFilteredCards();
   };
 
   const searchSkills = (query) => {
@@ -109,7 +108,6 @@ const Perfiles = () => {
           setSelectedSkill={setSelectedSkill}
           clearFilters={clearFilters}
           searchSkills={searchSkills}
-          updateFilteredCards={updateFilteredCards}
         />
 
         <div className="cards">

@@ -1,116 +1,49 @@
-import "../style/profiles.css"
-import { Link } from "react-router-dom"
-import fotoPrueba from "../img/fotos.jpg"
-// import fotoPrueba2 from "../img/foto-prueba2.jpg"
-import fotoprueba3 from "../img/fotopruebaTres.jpg";
-import fotoprueba4 from "../img/fotoprueba4.jpg";
-import fotoprueba5 from "../img/fotoprueba5.jpg";
-// import fotoPrueba3 from "../img/fotoPrueba3.jpg"
-// import Modal from '../components/Modal.jsx';
-// import Card from "./card.jsx";
-// import Pagination from "./Pagination.jsx";
-// import { useState,useMemo } from "react";
-function Profiles() {
+import { useState, useMemo } from 'react';
+import { Link } from 'react-router-dom';
+import Card from '../components/Card.jsx';
+import Modal from '../components/Modal.jsx';
+import data from '../../data/cards.json'; 
 
-  // const [showModal, setShowModal] = useState(false);
-  // const [modalData, setModalData] = useState({});
-  // const [currentPage, setCurrentPage] = useState(1);
+import "../style/profiles.css";
 
-  // const openModal = (card) => {
-  //   setModalData(card);
-  //   setShowModal(true);
-  // };
+const Profiles = () => {
+  const [cards] = useState(data.cards);
+  const [showModal, setShowModal] = useState(false);
+  const [modalData, setModalData] = useState({});
+  const cardsPerPage = 4; // Número de tarjetas a mostrar
+  const currentPage = 1; // Página actual (solo hay una en este caso)
 
-  // const closeModal = () => {
-  //   setShowModal(false);
-  // };
+  const paginatedCards = useMemo(() => {
+    return cards.slice(0, cardsPerPage); // Muestra solo las primeras 4 cards
+  }, [cards, cardsPerPage]);
 
-  // const nextPage = () => {
-  //   if (currentPage < totalPages) {
-  //     setCurrentPage(currentPage + 1);
-  //   }
-  // };
+  const openModal = (card) => {
+    setModalData(card);
+    setShowModal(true);
+  };
 
-  //   const totalPages = useMemo(() => {
-  //   return Math.ceil(filteredCards.length / cardsPerPage);
-  // }, [filteredCards.length]);
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
-
-  // const prevPage = () => {
-  //   if (currentPage > 1) {
-  //     setCurrentPage(currentPage - 1);
-  //   }
-  // };
-
-  // const paginatedCards = useMemo(() => {
-  //   const start = (currentPage - 1) * cardsPerPage;
-  //   const end = start + cardsPerPage;
-  //   return filteredCards.slice(start, end);
-  // }, [filteredCards, currentPage, cardsPerPage]);
-
-
-
-
-    return (
-      <section className="profiles">
+  return (
+    <section className="profiles">
       <h2>Perfiles destacados</h2>
       <div className="profile-cards">
-        <div className="profile-card">
-          <img src={fotoPrueba} alt="Perfil 1" className="profile-photo"/>
-          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
-          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
-          <div className="skills">
-            <span>Programming</span>
-            <span>JavaScript</span>
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-          <button>Ver perfil</button>
-        </div>
-        <div className="profile-card">
-          <img src={fotoprueba5} alt="Perfil 1" className="profile-photo"/>
-          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
-          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
-          <div className="skills">
-            <span>Programming</span>
-            <span>JavaScript</span>
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-          <button>Ver perfil</button>
-        </div>
-        <div className="profile-card">
-          <img src={fotoprueba3} alt="Perfil 1" className="profile-photo"/>
-          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
-          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
-          <div className="skills">
-            <span>Programming</span>
-            <span>JavaScript</span>
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-          <button>Ver perfil</button>
-        </div>
-        <div className="profile-card">
-          <img src={fotoprueba4} alt="Perfil 1" className="profile-photo"/>
-          <h3>FRONT-END WEB DEVELOPMENT | JAVASCRIPT</h3>
-          <p>Todas las modalidades<br />Exp.: Sin experiencia</p>
-          <div className="skills">
-            <span>Programming</span>
-            <span>JavaScript</span>
-            <span>HTML</span>
-            <span>CSS</span>
-          </div>
-          <button>Ver perfil</button>
-        </div>
-        {/* Repite esta estructura para las otras cards */}
+        {paginatedCards.map(card => (
+          <Card key={card.id} card={card} openModal={openModal} />
+        ))}
       </div>
       <button className="btn-primary">
         <Link to="/perfiles">Ver todos</Link>
       </button>
+      <Modal
+        showModal={showModal}
+        closeModal={closeModal}
+        modalData={modalData}
+      />
     </section>
-    );
-  }
-  
-  export default Profiles;
-  
+  );
+};
+
+export default Profiles;

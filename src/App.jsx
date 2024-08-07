@@ -10,6 +10,7 @@ import CuentaLogin from './page/cunetaLogin.jsx';
 import DetallesProfesionales from "./components/detallesProfesional.jsx"
 
 
+
 function App() {
 
 
@@ -23,7 +24,6 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/cuenta' element={<CuentaLogin />} />
             <Route path="/profesional/:id" element={<DetallesProfesionales />} />
-
         </Routes>
      </Router>
      

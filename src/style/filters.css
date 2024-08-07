@@ -1,7 +1,7 @@
 /* Estilos para el contenedor de filtros */
-.filters-wrapper {
+/* .filters-wrapper {
   position: relative;
-}
+} */
 
 /* Botón para mostrar/ocultar filtros */
 .toggle-filters-button {
@@ -37,44 +37,63 @@
   flex: 1 1 200px;
 }
 
-.filters .search-skills .react-autosuggest__input {
-  padding: 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  width: 100%;
-  box-sizing: border-box;
+.filters .search-skills .react-autosuggest__container {
+  position: relative;
 }
 
-.filters .search-skills .react-autosuggest__suggestions-container {
-  font-size: 16px;
-  border-radius: 5px;
-  background-color: #fff;
-  z-index: 2;
+.filters .search-skills .react-autosuggest__input {
   width: 100%;
-  box-sizing: border-box;
+  padding: 12px 20px;
+  border: 2px solid #ccc;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* .filters .search-skills .react-autosuggest__input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+  outline: none;
+} */
+
+.filters .search-skills .react-autosuggest__suggestions-container {
   position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background: #fff;
 }
 
 .filters .search-skills .react-autosuggest__suggestion {
-  padding: 10px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #f1f1f1;
   cursor: pointer;
+  transition: background-color 0.3s;
 }
 
 .filters .search-skills .react-autosuggest__suggestion--highlighted {
-  background-color: #ddd;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.filters .search-skills .react-autosuggest__suggestion:last-child {
+  border-bottom: none;
 }
 
 .filters .filter-button {
   background-color: #000;
   color: #fff;
   cursor: pointer;
-  padding: 8px 16px;
+  padding: 10px 16px;
   font-size: 14px;
   border-radius: 5px;
   border: none;
   margin: 5px;
 }
+
 
 .filters .search-skills {
   position: relative;

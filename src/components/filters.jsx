@@ -60,6 +60,7 @@ const Filters = ({
           <option value="" disabled>Profesión</option>
           <option value="developer">Developer</option>
           <option value="designer">Designer</option>
+          {/* <option value="designer">abogados</option> */}
         </select>
         <select value={selectedSpecialty} onChange={(e) => setSelectedSpecialty(e.target.value)}>
           <option value="" disabled>Especialidad</option>
@@ -76,11 +77,11 @@ const Filters = ({
           <option value="buenosaires">Buenos Aires</option>
           <option value="cordoba">Córdoba</option>
         </select>
-        <select value={selectedZone} onChange={(e) => setSelectedZone(e.target.value)}>
+        {/* <select value={selectedZone} onChange={(e) => setSelectedZone(e.target.value)}>
           <option value="" disabled>Zona</option>
           <option value="north">North</option>
           <option value="south">South</option>
-        </select>
+        </select> */}
         <div className="search-skills">
           <Autosuggest
             suggestions={suggestions}
